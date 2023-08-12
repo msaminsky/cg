@@ -1,0 +1,28 @@
+:root{
+    --green: #E4FDE1;
+    --brown: #735F3D;
+    --blue: #8AC4FF;
+    --pink: #C6878F;
+    --orange: #FF9F1C;
+}
+
+/* BUTTONS */
+.hot-button {
+    font-size: 100px;
+    color: var(--orange);
+    background-image: url(../assets/border.jpg);
+
+}
+.hot-button:hover {
+    filter: invert(0.9);
+}
+.return-button {
+    width: 144px;
+    height: 144px;
+    font-size: 20px;
+    color: var(--green);
+    background-image: url(../assets/light-lq-sm.jpeg);
+}
+.return-button:hover {
+    background-image: url(../assets/dark-lq-sm.jpeg);
+}
