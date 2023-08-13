@@ -13,23 +13,24 @@
         <h1>Store</h1>  
         <div class="store-grid-row">
             <div class="store-grid-item" >
-                <a href="https://www.instagram.com/candigoldstein/?hl=en">
+                <a href="https://www.instagram.com/candigoldstein/?hl=en" target=”_blank”>
                     <img src="../assets/products/chicken_stay_put_sm.jpg" class="item-img" alt="chicken stay put art" width="300" height="300">
                 </a>
             </div>
             <div class="store-grid-item">
-                <a href="https://www.instagram.com/candigoldstein/?hl=en">
+                <a href="https://www.instagram.com/candigoldstein/?hl=en" target=”_blank”>
                     <img src="../assets/products/cloud_print_sm.jpg" class="item-img" alt="cloud print art" width="300" height="300">
                                 </a>
             </div>
             <div class="store-grid-item">
-                <iframe class="item-sound" style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=3118570873/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://candigoldstein.bandcamp.com/track/green-peas">Green Peas by Candi Goldstein</a></iframe>
+                <div class="item-sound">
+                    <iframe  style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=3118570873/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://candigoldstein.bandcamp.com/track/green-peas">Green Peas by Candi Goldstein</a></iframe>
+                </div>
             </div>
             <div class="store-grid-item">
                 <img src="../assets/products/hbd_sm.jpg" class="item-sound" alt="happy birthday song" width="300" height="300" onClick="toggleAudio('../assets/products/hbd.mp3')">
             </div>
         </div>
-        <button type="button" class="hot-button" onclick="window.location.href='../index.html';" name="Enter Site">Click Me; Exit.</button>
         <footer id="footer">
             <button type="button" class="return-button" onclick="window.location.href='../index.html';" name="Return To Main">uhh..</button>
           </footer>
@@ -51,7 +52,6 @@
     }
 
     function toggleAudio(url) {
-        console.log(currentAudio, currentAudio?.getAttribute("src") === url)
         currentAudio && currentAudio.getAttribute("src") === url ? stopAudio() : playAudio(url) 
     }
 </script>
