@@ -23,12 +23,10 @@
                                 </a>
             </div>
             <div class="store-grid-item">
-                <img src="../assets/products/sweet_peas_sm.png" class="item-img" alt="sweet peas song" width="300" height="300" onClick="toggleAudio('../assets/products/green_peas.mp3'); toggleElementVisibility('pause-button-sweet-peas');">
-                <button class="pause-btn" id="pause-button-sweet-peas" onClick="stopAudio(); toggleElementVisibility('pause-button-sweet-peas');">Stop it</button>
+                <iframe class="item-sound" style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=3118570873/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://candigoldstein.bandcamp.com/track/green-peas">Green Peas by Candi Goldstein</a></iframe>
             </div>
             <div class="store-grid-item">
-                <img src="../assets/products/hbd_sm.jpg" class="item-img" alt="happy birthday song" width="300" height="300" onClick="toggleAudio('../assets/products/hbd.mp3'); toggleElementVisibility('pause-button-hbd');">
-                <button class="pause-btn" id="pause-button-hbd" onClick="stopAudio(); toggleElementVisibility('pause-button-hbd');">Stop it</button>
+                <img src="../assets/products/hbd_sm.jpg" class="item-sound" alt="happy birthday song" width="300" height="300" onClick="toggleAudio('../assets/products/hbd.mp3')">
             </div>
         </div>
         <button type="button" class="hot-button" onclick="window.location.href='../index.html';" name="Enter Site">Click Me; Exit.</button>
@@ -55,15 +53,6 @@
     function toggleAudio(url) {
         console.log(currentAudio, currentAudio?.getAttribute("src") === url)
         currentAudio && currentAudio.getAttribute("src") === url ? stopAudio() : playAudio(url) 
-    }
-
-    const pauseButtons = document.querySelectorAll('.pause-btn')
-    pauseButtons.forEach(el => el.hidden = true)
-
-    function toggleElementVisibility(id) {
-        element = document.querySelector(`#${id}`);
-        console.log({vis: element.hidden})
-        element.hidden = !element.hidden
     }
 </script>
 </html>
