@@ -11,8 +11,59 @@
   <body>
     <main>
         <h1>Store</h1>  
+        <div class="store-grid-row">
+            <div class="store-grid-item" >
+                <a href="https://www.instagram.com/candigoldstein/?hl=en">
+                    <img src="../assets/products/chicken_stay_put_sm.jpg" class="item-img" alt="chicken stay put art" width="300" height="300">
+                </a>
+            </div>
+            <div class="store-grid-item">
+                <a href="https://www.instagram.com/candigoldstein/?hl=en">
+                    <img src="../assets/products/cloud_print_sm.jpg" class="item-img" alt="cloud print art" width="300" height="300">
+                                </a>
+            </div>
+            <div class="store-grid-item">
+                <img src="../assets/products/sweet_peas_sm.png" class="item-img" alt="sweet peas song" width="300" height="300" onClick="toggleAudio('../assets/products/green_peas.mp3'); toggleElementVisibility('pause-button-sweet-peas');">
+                <button class="pause-btn" id="pause-button-sweet-peas" onClick="stopAudio(); toggleElementVisibility('pause-button-sweet-peas');">Stop it</button>
+            </div>
+            <div class="store-grid-item">
+                <img src="../assets/products/hbd_sm.jpg" class="item-img" alt="happy birthday song" width="300" height="300" onClick="toggleAudio('../assets/products/hbd.mp3'); toggleElementVisibility('pause-button-hbd');">
+                <button class="pause-btn" id="pause-button-hbd" onClick="stopAudio(); toggleElementVisibility('pause-button-hbd');">Stop it</button>
+            </div>
+        </div>
         <button type="button" class="hot-button" onclick="window.location.href='../index.html';" name="Enter Site">Click Me; Exit.</button>
+        <footer id="footer">
+            <button type="button" class="return-button" onclick="window.location.href='../index.html';" name="Return To Main">uhh..</button>
+          </footer>
     </main>
 	<script src="index.js"></script>
   </body>
+  <script>
+    let currentAudio = null; 
+    function playAudio(url) {
+        if (currentAudio) {currentAudio.stop()};
+        currentAudio = new Audio(url);
+        currentAudio.play();
+    }
+
+    function stopAudio() {
+            if (!currentAudio) return;
+            currentAudio.pause();
+            currentAudio = null;
+    }
+
+    function toggleAudio(url) {
+        console.log(currentAudio, currentAudio?.getAttribute("src") === url)
+        currentAudio && currentAudio.getAttribute("src") === url ? stopAudio() : playAudio(url) 
+    }
+
+    const pauseButtons = document.querySelectorAll('.pause-btn')
+    pauseButtons.forEach(el => el.hidden = true)
+
+    function toggleElementVisibility(id) {
+        element = document.querySelector(`#${id}`);
+        console.log({vis: element.hidden})
+        element.hidden = !element.hidden
+    }
+</script>
 </html>
