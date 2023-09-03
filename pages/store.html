@@ -4,38 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Candy Goldstein</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>Candi Store</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handjet">
     <link rel="stylesheet" href="../styles/common.css">
   </head>
   <body>
     <main>
-        <h1>Store</h1>  
-        <div class="store-grid-row">
-            <div class="store-grid-item" >
+<div>I seem to be necessary, currently.</div>
+        <h1 class="header">
+            <div class="filter-button">
+                <div class="filter-button-icon">👀</div>
+                <div class="filter-button-text">Art</div>
+             </div>
+             <div class="filter-button">
+                <div class="filter-button-icon">👂🏼</div>
+                <div class="filter-button-text">Listen</div>
+             </div>
+             <div class="filter-button">
+                <div class="filter-button-icon">💸</div>
+                <div class="filter-button-text">Buy</div>
+             </div>                
+            </div>
+        </h1>  
+        <div class="store-grid">
+            <div class="store-item" >
                 <a href="https://www.instagram.com/candigoldstein/?hl=en" target=”_blank”>
                     <img src="../assets/products/chicken_stay_put_sm.jpg" class="item-img" alt="chicken stay put art" width="300" height="300">
                 </a>
             </div>
-            <div class="store-grid-item">
+            <div class="store-item">
                 <a href="https://www.instagram.com/candigoldstein/?hl=en" target=”_blank”>
                     <img src="../assets/products/cloud_print_sm.jpg" class="item-img" alt="cloud print art" width="300" height="300">
                                 </a>
             </div>
-            <div class="store-grid-item">
+            <div class="store-item">
                 <div class="item-sound">
                     <iframe  style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=3118570873/size=large/bgcol=ffffff/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://candigoldstein.bandcamp.com/track/green-peas">Green Peas by Candi Goldstein</a></iframe>
                 </div>
             </div>
-            <div class="store-grid-item">
+            <div class="store-item">
                 <img src="../assets/products/hbd_sm.jpg" class="item-sound" alt="happy birthday song" width="300" height="300" onClick="toggleAudio('../assets/products/hbd.mp3')">
             </div>
         </div>
-        <footer id="footer">
-            <button type="button" class="return-button" onclick="window.location.href='../index.html';" name="Return To Main">uhh..</button>
+        <footer>
+            <button type="button" class="return-button" onclick="window.location.href='../index.html';" name="Return To Main"></button>
           </footer>
     </main>
-	<script src="index.js"></script>
+	<script src="../index.js"></script>
   </body>
   <script>
     let currentAudio = null; 
