@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Candi Goldstein</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/common.css">
+    <script type="text/javascript" src="../js/paper/dist/paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas-1" src="games.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Games
+        </h1>  
+        <div class="center-container">          
+            <canvas width="800" height="800" resize="true" id="canvas-1" style="background: black; -webkit-user-drag: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" data-paper-scope="1"></canvas>      
+          </div>
+
+        <footer id="footer">
+          <div>
+            <button type="button" class="return-button" onclick="window.location.href='../index.html';" name="return to homepage">Click me back.</button>
+        </div>
+        </footer>
+    </main>
+	<script src="./games.js"></script>
+  </body>
+  <script>
+    let currentAudio = null; 
+    function playAudio(url) {
+        if (currentAudio) {currentAudio.stop()};
+        currentAudio = new Audio(url);
+        currentAudio.play();
+    }
+
+    function stopAudio() {
+            if (!currentAudio) return;
+            currentAudio.pause();
+            currentAudio = null;
+    }
+
+    function toggleAudio(url) {
+        currentAudio && currentAudio.getAttribute("src") === url ? stopAudio() : playAudio(url) 
+    }
+</script>
+</html>

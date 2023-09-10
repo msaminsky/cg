@@ -10,9 +10,47 @@
     <link rel="stylesheet" href="styles/common.css">
   </head>
   <body>
-    <div class="center-bottom">
-      <button type="button" class="enter-button" onclick="window.location.href='pages/store.html';" name="Enter Site">Click Me; Enter.</button>
+    <div class="center-top">
+      <img id="instaIcon" src="assets/products/chicken_stay_put.jpg" width="500" height="500">
+    </div>
+    <div class="center">
+      <div>
+      <div style="font-size:40px;padding-bottom:30px;">
+        Stay up to date on all things Candi
+        </div>
+        <form id='mailing' 
+        method="POST"
+          action="https://script.google.com/macros/s/AKfycbwYRF3x2wkNBwob5mU3pSLs9Z4bJ7ZdMsU4p8j2lUyT6RtRf5PX9BHgdXLTBqzZRazj/exec">
+          <label for="email">Sign up:</label>
+          <input name="email" type="email" placeholder="email" required>
+          <input type="submit">
+        </form>
+        <div style="font-size:40px;padding-bottom:10px;">
+        or
+        </div>
+          <a href="https://www.instagram.com/candigoldstein/?hl=en" target=”_blank”>
+            <img id="instaIcon" src="assets/icons/socials/512px-Instagram_icon.png" width="100" height="100">
+        </a>
+      </div>
+      <!-- <button type="button" class="enter-button" onclick="window.location.href='pages/store.html';" name="Enter Site">Click Me; Enter.</button> -->
     </div>
 	<script src="index.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+  const form = document.getElementById('mailing');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Success!");
+    })
+  });
+});
+  </script>
   </body>
 </html>
