@@ -39,7 +39,7 @@ footer {
   .center {
     margin: auto;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     max-height: 400px;
     padding: 30px; /* vertical align */
     text-align: center;
